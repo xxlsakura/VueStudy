@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style>
+		td{
+			border: 1px solid #DCDCDC;
+		}
+		a{
+			text-decoration: none;
+		}
+	</style>
+	<body>
+		<!-- <a>点我试试看</a>
+		<button onclick="btnset()">设置属性</button>
+		<button onclick="btnremove()">删除属性</button> -->
+		<div style="text-align: center;"><input type="number" id="num" placeholder="请输入编号"/>
+		<input type="text" id="name" placeholder="请输入姓名"/>
+		<button onclick="add()">添加</button>
+		</div>
+		<table id="tab" align="center" style="border: 1px solid #DCDCDC;width: 400px;">
+			<tr>
+				<td>编号</td>
+				<td>姓名</td>
+				<td>操作</td>
+			</tr>
+		</table>
+		<script>
+			function add(){
+				var num=document.getElementById("num").value
+				var name=document.getElementById("name").value
+				
+				var table=document.getElementById("tab")
+				var tr=document.createElement("tr")
+				var td=document.createElement("td")
+				var td1=document.createElement("td")
+				var td2=document.createElement("td")
+				var a=document.createElement("a")
+				a.setAttribute("href","javascript:void(0)")
+				a.setAttribute("onclick","remove(this)")
+				var addnum=document.createTextNode(num)
+				var addname=document.createTextNode(name)
+				var adda=document.createTextNode("删除")
+				a.appendChild(adda)
+				td.appendChild(addnum)
+				td1.appendChild(addname)
+				td2.appendChild(a)
+				tr.appendChild(td)
+				tr.appendChild(td1)
+				tr.appendChild(td2)
+				table.appendChild(tr);
+			}
+			function remove(obj){
+				var tab=obj.parentNode.parentNode.parentNode
+				var tr=obj.parentNode.parentNode
+				tab.removeChild(tr)
+			}
+			
+			// function btnset(){
+			// 	var b=document.getElementsByTagName("a")[0];
+			// 	b.setAttribute("href","https://www.baidu.com");
+			// }
+			// function btnremove(){
+			// 	var b=document.getElementsByTagName("a")[0];
+			// 	b.removeAttribute("href");
+			// }
+		</script>
+	</body>
+</html>

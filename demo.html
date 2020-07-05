@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			
+			a:link{
+				color: #00FFFF;
+			},
+			a:hover{
+				color: yellow;
+			},
+			a:active{
+				color: blue;
+				
+			},
+			a:visited{
+				color: red;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<!-- <button onclick="fun()">点我</button>
+		
+		<a href="#" target="_blank">啦啦啦</a> -->
+		<img src="img/001.jpg" id="img"/>
+		<script>
+			var num=0
+			function change(){
+				num++;
+				if(num>6){
+					num=0
+				}
+				var img=document.getElementById("img");
+				img.src="img/00"+num+".jpg";
+			
+			}
+			
+			setInterval("change()",2000)
+			var reg=/^[\w][\d]$/;
+			var x="12";
+			// alert(reg.test(x));
+			// var reg1=new RegExp("^\\w{3,6}$");
+			// alert(reg1.test(x));
+			// function fun(){
+			// 	alert("6666")
+			//}
+		</script>
+		
+	</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<input type="text" v-model="num1"/>
+			<select v-model="suan">
+				<option value="jia">+</option>
+				<option value="jian">-</option>
+				<option value="cheng">*</option>
+				<option value="chu">/</option>
+			</select>
+			<input type="text" v-model="num2"/>
+			<input type="button" value="=" @click="jisuan"/>
+			<input type="text" v-model="num3"/>
+		</div>
+		<script>
+			var app=new Vue({
+				el:"#app",
+				data:{
+					num1:"",
+					num2:"",
+					suan:"",
+					num3:""
+				},
+				methods:{
+					jisuan(){
+						if(this.num1&&this.num2&&this.suan){
+							if("jia"==(this.suan)){
+								this.num3=parseInt(this.num1)+parseInt(this.num2)
+								
+							}else if("jian"==(this.suan)){
+								this.num3=parseInt(this.num1)-parseInt(this.num2)
+							}else if("cheng"==(this.suan)){
+								this.num3=parseInt(this.num1)*parseInt(this.num2)
+							}else if("chu"==(this.suan)){
+								if(this.num2==0){
+									this.num3="被除数不能为0"
+								}else{
+									this.num3=parseInt(this.num1)/parseInt(this.num2)
+								}
+								
+							}
+						}else{
+							alert("请先输入完整！")
+						}
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

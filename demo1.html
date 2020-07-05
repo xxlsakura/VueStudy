@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<p><span style="color: red;" id="num"></span>秒后，自动跳转</p>
+	</body>
+	<script>
+		var num=6
+		function tiao(){
+			num--
+			var sp=document.getElementById("num");
+			if(num<=0){
+				location.href="www.baidu.com"
+			}
+			sp.innerHTML=num+""
+			
+			
+		}
+		setInterval(tiao,1000)
+	</script>
+</html>

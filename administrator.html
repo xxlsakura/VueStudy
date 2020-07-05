@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>管理任务</title>
+		<script src="./js/jquery.js"></script>
+		<script src="./js/vue.min.js"></script>
+	</head>
+	<body>
+		<div>
+			<center><h2>任务列表</h2></center>
+			<div id="app" align="center">
+                <div v-show="m!=''">{{m}}</div>
+				<div v-show="alljoblist.length>0">
+					<ol>
+						<li v-for="item in alljoblist">
+							编号:{{item.jid}}
+							用户:{{item.uname}}
+							手机:{{item.phone}}
+							任务:{{item.jname}}
+							时间:{{item.updatedate}}
+							<button @click="agree(item.jid)">同意</button>
+							<button @click="refuse(item.jid)">拒绝</button>
+						</li>
+					</ol>
+				</div>
+				
+			</div>
+		</div>
+		<script src="./js/job.js"></script>
+	</body>
+</html>

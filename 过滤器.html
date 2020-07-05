@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<style>
+			[v-cloak]{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app" v-cloak>
+			{{msg | msgFilter("大叔")}}
+		</div>
+	</body>
+	<script>
+		//替换少年为大叔
+		Vue.filter("msgFilter",function(data,str){
+			//正则表达式可以替换多个
+			return data.replace(/少年/g,str)
+		})
+		var app=new Vue({
+			el:"#app",
+			data:{
+				msg:"我还是从前呢个少年，很帅的一个少年，很酷的呢个少年!"
+			}
+		})
+	</script>
+</html>

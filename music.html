@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link type="text/css" rel="stylesheet"  href="./css/music.css"/>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="./js/jquery.js"></script>
+		<script src="./js/jqueryRotate.js"></script>
+		
+	</head>
+	<body>
+		<div class="wrap" id="app">
+			
+			<div class="top">
+		         <div>My Music</div>
+		         <div> <input type="text" v-model="msg" @keyup.enter="searchMusic(msg)"/>
+				 <button @click="searchMusic(msg)">搜索</button>
+				 </div>                      
+			</div>
+			
+	        <div class="centre">
+				<div class="musiclist">
+					
+					<div v-for="item in musiclist" class="list">
+						<a href="javascript:void(0)"  @click="playMusic(item.id)"><img src="img/play.png"/><span>{{item.name}}</span>
+						</a>
+						<a href="javascript:void(0)" @click="playMv(item.mvid,item.id)"><img src="./img/mv.png"  v-if="item.mvid!=0"/></a>
+					</div>
+				</div>
+				<div class="musicpicture">
+					<div style="color: red;position: absolute;margin-left: 23%;margin-top: 6%;font-size: 20px;">
+						{{musicname}}</div>
+					<img v-bind:src="picurl" id="songimg" v-if="videosrc==''" />
+					<video controls="controls"  loop="loop" autoplay="autoplay" v-bind:src="videosrc" v-if="videosrc!=''"></video>
+				</div>
+				<div class="musiccommnts" >
+					<div v-for="item in commentslist" class="c">
+					   <img v-bind:src="item.user.avatarUrl" style="border-radius: 50%;" width="50px" height="50px"/>
+					   <div class="com">
+						  <div style="color: royalblue">{{item.user.nickname}}:</div>
+						  <div>{{item.content}}</div>
+					   </div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="bottom" >
+				<audio ref="audio" @play="play()"  @pause="pause()" v-bind:src="musicurl" controls="controls" loop="loop" autoplay="autoplay"></audio>
+				
+			</div>
+			  
+		</div>
+		
+		
+		<script src="./js/music.js"></script>
+	</body>
+</html>

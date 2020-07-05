@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		
+		<div id="app">
+			<input type="text" v-model="msg" @keyup.enter="getMsg"/>
+			<ol>
+				<li v-for="(item,index) in msgArray">
+					&nbsp{{item}}
+				</li>
+			</ol>
+			<div v-show="msgArray.length>0">总计:{{msgArray.length}}</div>
+			<button v-show="msgArray.length>0" @click="clear">清空</button>
+		</div>
+		
+		<script>
+			var app =new Vue({
+				el:"#app",
+				data:{
+					msg:"",
+					msgArray:[]
+				},
+				methods:{
+					getMsg(){
+						if(this.msg!=""){this.msgArray.push(this.msg)}
+						
+					},
+					clear(){
+						this.msgArray=[]
+					}
+				}
+			})
+				
+		</script>
+		
+		
+	</body>
+</html>

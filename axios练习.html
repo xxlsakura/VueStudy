@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	</head>
+	<body>
+		<button class="toget">get请求</button>
+		<button class="topost" >post请求</button>
+		<script>
+			document.querySelector(".toget").onclick=function(){
+				// 传参方式一  获取笑话接口
+				axios.get("https://autumnfish.cn/api/joke/list?num=3").then(function(response){console.log(response)},
+				function(error){console.log(error)})
+				// 传参方式二
+				// axios.get("https://autumnfish.cn/api/joke/list",{params:{num:6}}).then(function(response){console.log(response)},
+				// function(error){console.log(error)})
+			}
+			document.querySelector(".topost").onclick=function(){
+				// 注册用户接口
+				axios.post("https://autumnfish.cn/api/user/reg",{username:"西红柿鸡蛋面"}).then(function(response){console.log(response)},
+				function(error){error})
+			}
+			
+		</script>
+	</body>
+</html>

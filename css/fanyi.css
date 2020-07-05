@@ -1,0 +1,37 @@
+.wrap{
+	width: 1200px;
+	height: 750px;
+	display: flex;
+	margin:30px auto;
+	flex-direction: column;
+	justify-content: center;
+	border: 1px solid skyblue;
+}
+.top{
+	margin-top: 0px;
+	height: 30px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+.number{
+	height: 40px;
+	margin-left: 380px;
+	width: 460px;
+	display: flex;
+	flex-direction: row;
+	justify-content:space-around;
+	
+}
+.text{
+	height: 600px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+.bottom{
+	height: 30px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}

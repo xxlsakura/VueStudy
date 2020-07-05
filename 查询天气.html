@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="./js/jquery.js"></script>
+	</head>
+	<body>
+		<div id="app" align="center">
+			<h2>查询天气</h2>
+			<input type="text" v-model="msg" @keyup.enter="getCity(msg)"/><button @click="getCity(msg)">查询</button>
+			
+			<div><button v-for="item in cityArr"  @click="getCity(item)" style="background-color: white;border: -webkit-link;">
+			{{item}}</button></div>
+			<ol>
+				<ul v-for="item in weatherArray" ><p>日期:{{item.date}}</p> <p>{{item.tem_night}}℃~{{item.tem_day}}℃</p>
+				<p>{{item.wea}}</p><p>{{item.win}}</p></ul>
+			</ol>
+		</div>
+		<script>
+			var app=new Vue({
+				el:"#app",
+				data:{
+				  msg:"",
+				  cityArr:["北京","上海","广州","深圳"],
+				  weatherArray:[]
+				},
+				methods:{
+					getCity(p){
+						var that=this
+						axios.get("https://www.tianqiapi.com/free/week?appid=49463133&appsecret=540bullh&city="+p)
+						.then(function(resp){console.log(resp.data.data);that.weatherArray=resp.data.data},
+						function(err){console.log(err)})
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

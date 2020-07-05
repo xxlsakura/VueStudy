@@ -1,0 +1,102 @@
+.wrap{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	
+	border: 0px solid red;
+}
+.top{
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: 50px;
+	justify-content: space-around;
+	background-color: aqua;
+	position: fixed;
+	margin-top: -8px;
+}
+.top div{
+	margin: auto;
+}
+.centre{
+	margin-top: 42px;
+	display: flex;
+	flex-direction: row;
+	width: 80%;
+	height: 70%;
+}
+.musiclist{
+	display: flex;
+	flex-direction: column;
+	width: 32%;
+	height: 100%;
+	border: 0px solid red;
+	justify-content: center;
+}
+.list{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	height: 36px;
+	line-height: 36px;
+	overflow: hidden;
+	border-bottom: 1px solid gainsboro;
+}
+a{
+	text-decoration: none;
+}
+
+.list img{
+    width: 18px;
+	height: 18px;
+}
+
+.musicpicture{
+	position: fixed;
+	margin-left: 28%;
+	display: flex;
+	flex-direction: column;
+	width: 60%;
+	height: 100%;
+}
+.musicpicture img{
+	width: 600px;
+	height: 600px;
+	border-radius: 50%;
+	margin-top: 10%;
+}
+.musicpicture video{
+	width: 650px;
+	height: 420px;
+}
+.musiccommnts{
+	display: flex;
+	flex-direction: column;
+	width: 36%;
+	height: 100%;
+}
+.c{
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	margin-left: 156%;
+}
+.com{
+	display: flex;
+	flex-direction: column;
+}
+
+.bottom{
+	position: fixed;
+	bottom: -52px;
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: 10%;
+}
+.bottom audio{
+	width: 100%;
+	height: 40px;
+}
